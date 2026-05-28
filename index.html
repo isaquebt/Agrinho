@@ -1,3 +1,8 @@
+# Melhorias de Interação para o Site Agrinho
+
+## Novo `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,51 +15,62 @@
 
     <header>
         <div class="container">
-            <h1>Agroinho 2026</h1>
+            <h1>Agrinho 2026</h1>
             <p>A sinergia sustentável entre Sojicultura e Apicultura</p>
+
+            <button id="temaBtn" class="action-btn">🌙 Alternar Tema</button>
         </div>
     </header>
 
     <main class="container">
         
-        <section class="card intro">
+        <section class="card intro fade-in">
             <h2>O Caso de Sucesso</h2>
-            <p>Uma parceria inovadora entre produtores de soja, apicultores, <strong>Embrapa, Senar e BASF</strong> em estados como PR, MS e RS provou que a convivência entre lavouras e abelhas é altamente benéfica para a economia e o meio ambiente.</p>
+            <p>
+                Uma parceria inovadora entre produtores de soja, apicultores,
+                <strong>Embrapa, Senar e BASF</strong> em estados como PR, MS e RS
+                provou que a convivência entre lavouras e abelhas é altamente
+                benéfica para a economia e o meio ambiente.
+            </p>
         </section>
 
         <section class="grid">
-            <div class="card metric">
+            <div class="card metric clickable fade-in">
                 <h3>+10% a 12%</h3>
                 <p>De produtividade na soja graças à polinização das abelhas.</p>
             </div>
-            <div class="card metric">
+
+            <div class="card metric clickable fade-in">
                 <h3>Nova Renda</h3>
                 <p>Produção de mel de florada de soja para os apicultores.</p>
             </div>
-            <div class="card metric">
+
+            <div class="card metric clickable fade-in">
                 <h3>Proteção</h3>
                 <p>Redução drástica na mortalidade das abelhas com boas práticas.</p>
             </div>
         </section>
 
-        <section class="card">
+        <section class="card fade-in">
             <h2>Principais Práticas Adotadas</h2>
             <p>Clique nos botões abaixo para entender as medidas que garantiram o sucesso do projeto:</p>
             
             <div class="tabs">
-                <button class="tab-btn active" onclick="showTab('mip')">MIP</button>
-                <button class="tab-btn" onclick="showTab('planejamento')">Planejamento</button>
-                <button class="tab-btn" onclick="showTab('horarios')">Horários Seguros</button>
-                <button class="tab-btn" onclick="showTab('protocolos')">Protocolos</button>
+                <button class="tab-btn active" onclick="showTab('mip', event)">MIP</button>
+                <button class="tab-btn" onclick="showTab('planejamento', event)">Planejamento</button>
+                <button class="tab-btn" onclick="showTab('horarios', event)">Horários Seguros</button>
+                <button class="tab-btn" onclick="showTab('protocolos', event)">Protocolos</button>
             </div>
 
             <div id="tab-content" class="tab-content">
-                <strong>Manejo Integrado de Pragas (MIP):</strong> Uso consciente e estratégico de defensivos agrícolas, priorizando a saúde do ecossistema e das colmeias.
+                <strong>Manejo Integrado de Pragas (MIP):</strong>
+                Uso consciente e estratégico de defensivos agrícolas,
+                priorizando a saúde do ecossistema e das colmeias.
             </div>
         </section>
 
         <section class="grid">
-            <div class="card subcard">
+            <div class="card subcard clickable fade-in">
                 <h3>Impactos Ambientais</h3>
                 <ul>
                     <li>Preservação de polinizadores nativos</li>
@@ -62,7 +78,8 @@
                     <li>Reflorestamento com espécies nativas</li>
                 </ul>
             </div>
-            <div class="card subcard">
+
+            <div class="card subcard clickable fade-in">
                 <h3>Agricultura Familiar</h3>
                 <ul>
                     <li>Apoio técnico do Senar em SC e MS</li>
@@ -70,6 +87,14 @@
                     <li>Profissionalização da gestão rural</li>
                 </ul>
             </div>
+        </section>
+
+        <section class="card fade-in contador-section">
+            <h2>🐝 Contador de Abelhas Protegidas</h2>
+            <p id="contador">0</p>
+            <button onclick="aumentarContador()" class="action-btn">
+                Proteger Mais Abelhas
+            </button>
         </section>
 
     </main>
@@ -81,3 +106,8 @@
     <script src="main.js"></script>
 </body>
 </html>
+<button onclick="aumentarContador()" class="action-btn">
+    Proteger Mais Abelhas
+</button>
+<script src="main.js"></script>
+</body>

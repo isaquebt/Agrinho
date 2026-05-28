@@ -20,3 +20,13 @@ function showTab(pratica) {
     // Usa o evento global para descobrir quem acionou a função
     event.currentTarget.classList.add("active");
 }
+// Contador interativo
+let contador = 0;
+
+function aumentarContador() {
+    contador += 100;
+
+    const contadorElemento = document.getElementById("contador");
+
+    contadorElemento.innerText = contador + " 🐝";
+}
